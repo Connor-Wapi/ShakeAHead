@@ -294,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundChecker: {fileID: 1953079123829839063}
   rigidbody2D: {fileID: 1953079125310008223}
-  jumpForce: 950
+  jumpForce: 920
 --- !u!114 &8659243257491280899
 MonoBehaviour:
   m_ObjectHideFlags: 0
