@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class RingingSoundEffect : MonoBehaviour
 {
-    [SerializeField] private Ring ring;
+    [FormerlySerializedAs("ring")] [SerializeField] private Bell bell;
     [SerializeField] private ParticleSystem soundParticle;
     
-    void Start()
+    void Awake()
     {
-        ring.OnRinging += PlaySoundEffect;
+        bell.OnRinging += PlaySoundEffect;
     }
 
     private void PlaySoundEffect()

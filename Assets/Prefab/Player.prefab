@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 1953079125310008220}
   - component: {fileID: 1953079125310008221}
   - component: {fileID: 1953079125310008219}
+  - component: {fileID: 8659243257491280899}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -259,7 +260,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1953079125310008222
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -328,7 +329,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundChecker: {fileID: 1953079123829839063}
   rigidbody2D: {fileID: 1953079125310008223}
-  jumpForce: 800
+  jumpForce: 950
+--- !u!114 &8659243257491280899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953079125310008209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e73162e34e62f041b48459f0ffa9a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 2
+  bell: {fileID: 1953079125878446609}
 --- !u!1 &1953079125563718089
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15043a18e2153f144ad206f0906a02c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ring: {fileID: 1953079125878446609}
+  bell: {fileID: 1953079125878446609}
   soundParticle: {fileID: 1953079125563718103}
 --- !u!198 &1953079125563718103
 ParticleSystem:
@@ -5108,7 +5123,7 @@ GameObject:
   - component: {fileID: 1953079125878446610}
   - component: {fileID: 1953079125878446609}
   m_Layer: 0
-  m_Name: Ring
+  m_Name: Bell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

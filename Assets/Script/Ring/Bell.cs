@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ring : MonoBehaviour
+public class Bell : MonoBehaviour
 {
     public event Action OnRinging ;
     
@@ -12,10 +12,19 @@ public class Ring : MonoBehaviour
     
     private float _timer;
 
+    void Start()
+    {
+        BellDurablity.Instance.Restore();
+        OnRinging += () => BellDurablity.Instance.DurabilityDown();
+        
+        
+        OnRinging?.Invoke();
+    }
+
     void Update()
     {
         _timer += Time.deltaTime;
-        if (rigidbody2D.velocity.magnitude > 0.5f && _timer >= ringingDelay)
+        if (BellDurablity.Instance.Enough() && rigidbody2D.velocity.magnitude > 0.5f && _timer >= ringingDelay)
         {
             ResetTimer();
             OnRinging?.Invoke();
