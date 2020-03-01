@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class PlayerLifeTime : MonoBehaviour
 {
+    public static event Action OnPlayerDead;
     public static float LifeTime { get; private set; }
     
     [SerializeField] private float time;
@@ -29,7 +31,7 @@ public class PlayerLifeTime : MonoBehaviour
         LifeTime = _timeLeft;
         if (_timeLeft < 0)
         {
-            Debug.Log("End of lifetime");
+            OnPlayerDead?.Invoke();
         }
     }
 }

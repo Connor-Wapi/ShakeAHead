@@ -31,7 +31,11 @@ public class StageManager : MonoBehaviour
         LoadStage(_currentStage + 1);
     }
 
-    
+    public void ReloadCurrent()
+    {
+        LoadStage(_currentStage);
+    }
+
     private void LoadStage(int stage)
     {
         StartCoroutine(LoadStageCoroutine(stage));

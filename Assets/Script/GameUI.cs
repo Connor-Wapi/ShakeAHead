@@ -10,6 +10,6 @@ public class GameUI : MonoBehaviour
     
     void Update()
     {
-        durabilityText.text = "Bell durability :: " + bellDurability.Durability;
+        durabilityText.text = bellDurability.Durability.ToString();
     }
 }

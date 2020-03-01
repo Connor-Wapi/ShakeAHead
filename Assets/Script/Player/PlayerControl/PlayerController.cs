@@ -7,10 +7,18 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private HorizontalMove horizontalMove;
     [SerializeField] private VerticalMove verticalMove;
+
+    void Start()
+    {
+        PlayerInputHolder.Unhold();
+    }
     
     void FixedUpdate()
     {
-        horizontalMove.Handle();
-        verticalMove.Handle();
+        if (!PlayerInputHolder.Holding)
+        {
+            horizontalMove.Handle();
+            verticalMove.Handle();   
+        }
     }
 }
