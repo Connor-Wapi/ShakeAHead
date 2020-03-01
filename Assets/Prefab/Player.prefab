@@ -5123,7 +5123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 1953079125310008223}
-  ringingDelay: 0.5
+  ringingDelay: 0.75
 --- !u!1 &6515762906074580079
 GameObject:
   m_ObjectHideFlags: 0
@@ -5168,8 +5168,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.4
+  m_Pitch: 3
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -5265,7 +5265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bell: {fileID: 1953079125878446609}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: f5ce7d81291fdc74ebe2e26b362c29a7, type: 3}
   audioSource: {fileID: 745716047094541545}
 --- !u!1 &6995136442393353207
 GameObject:

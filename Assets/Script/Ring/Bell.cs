@@ -16,8 +16,6 @@ public class Bell : MonoBehaviour
     {
         BellDurablity.Instance.Restore();
         OnRinging += () => BellDurablity.Instance.DurabilityDown();
-        
-        
         OnRinging?.Invoke();
     }
 

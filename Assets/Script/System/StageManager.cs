@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,6 +21,8 @@ public class StageManager : MonoBehaviour
     private static StageManager _instance;
 
     private int _currentStage = 0;
+
+    public event Action OnLoadNext;
     
     void Start()
     {
@@ -28,6 +31,7 @@ public class StageManager : MonoBehaviour
 
     public void LoadNext()
     {
+        OnLoadNext?.Invoke();
         LoadStage(_currentStage + 1);
     }
 

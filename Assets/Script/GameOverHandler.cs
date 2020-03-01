@@ -5,8 +5,10 @@ using UnityEngine;
 public class GameOverHandler : MonoBehaviour
 {
     [SerializeField] private GameOverUI gameOverUI;
+    [SerializeField] private GameObject clearUI;
+    [SerializeField] private GameObject ringUI;
     [SerializeField] private StageManager stageManager;
-    
+
     void Awake()
     {
         PlayerLifeTime.OnPlayerDead += GameOver;
@@ -15,6 +17,11 @@ public class GameOverHandler : MonoBehaviour
             gameOverUI.gameObject.SetActive(false);
             PlayerInputHolder.Unhold();
             stageManager.ReloadCurrent();
+        };
+        Clear.OnClear += () =>
+        {
+            ringUI.SetActive(false);
+            clearUI.SetActive(true);
         };
     }
 

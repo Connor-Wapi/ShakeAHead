@@ -13,7 +13,8 @@ public class PlayerLifeTime : MonoBehaviour
     [SerializeField] private Bell bell;
     
     private float _timeLeft;
-
+    private bool _dead;
+    
     void Awake()
     {
         bell.OnRinging += () => _timeLeft = time;
@@ -29,8 +30,9 @@ public class PlayerLifeTime : MonoBehaviour
     {
         _timeLeft -= Time.deltaTime;
         LifeTime = _timeLeft;
-        if (_timeLeft < 0)
+        if (_timeLeft < 0 && !_dead)
         {
+            _dead = true;
             OnPlayerDead?.Invoke();
         }
     }
